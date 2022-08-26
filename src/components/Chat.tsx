@@ -24,6 +24,8 @@ export interface ChatProps {
   headerPrimaryText: string;
   headerSecondaryText: string;
   chatHistory: string;
+  chatAvatar?: string;
+  variant?: string;
 }
 
 export const Chat: React.FC<ChatProps> = ({
@@ -31,6 +33,8 @@ export const Chat: React.FC<ChatProps> = ({
   headerPrimaryText,
   headerSecondaryText,
   chatHistory,
+  chatAvatar,
+  variant,
   ...props
 }: ChatProps) => {
   const [chatText, setChatText] = useState("Type your message…");
@@ -55,9 +59,9 @@ export const Chat: React.FC<ChatProps> = ({
 
   return (
     <ChatWrapper>
-      <ChatContent>
+      <ChatContent css={variant}>
         <ChatHeaderWrapper>
-          <Avatar src={avatar} alt="avatar" />
+          <Avatar src={chatAvatar || avatar} alt="avatar" />
           <ChatHeaderTypography>
             <ChatHeaderPrimaryText>{headerPrimaryText}</ChatHeaderPrimaryText>
             <ChatHeaderSecondaryText>
