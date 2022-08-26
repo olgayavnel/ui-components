@@ -8,7 +8,6 @@ export default {
   component: Chat,
   decorators: [withDesign],
   args: {
-    label: "",
     headerPrimaryText: "Emily Dougrer",
     headerSecondaryText: "Developer",
     chatHistory: "Hi there.👋  We use Boards to share initial goals and ideas.",

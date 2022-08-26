@@ -21,7 +21,6 @@ import {
 
 export interface ChatProps {
   children: ReactNode;
-  label?: string;
   headerPrimaryText: string;
   headerSecondaryText: string;
   chatHistory: string;
