@@ -15,6 +15,7 @@ import {
 export interface BestsellersProps {
   label: string;
   products: {
+    id: string;
     image: string;
     name: string;
     brand: string;
@@ -27,33 +28,24 @@ export const Bestsellers: React.FC<BestsellersProps> = ({
   products,
   ...props
 }: BestsellersProps) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive((current) => !current);
-  };
-
   return (
     <ProductsWrapper>
       <ProductsContent>
         <Label>{label}</Label>
         <ProductsList>
-          {(products || []).map((product) => (
-            <ProductWrapper
-              onClick={handleClick}
-              style={{
-                backgroundColor: isActive ? "salmon" : "",
-                color: isActive ? "white" : "",
-              }}
-            >
-              <ProductImage src={product.image} alt="sneakers" />
-              <ProductInfo>
-                <ProductName>{product.name}</ProductName>
-                <ProductBrand>{product.brand}</ProductBrand>
-                <ProductPrice>${product.price}</ProductPrice>
-              </ProductInfo>
-            </ProductWrapper>
-          ))}
+          {(products || []).map((product, i) => {
+            console.log(products);
+            return (
+              <ProductWrapper key={i}>
+                <ProductImage src={product.image} alt="sneakers" />
+                <ProductInfo>
+                  <ProductName>{product.name}</ProductName>
+                  <ProductBrand>{product.brand}</ProductBrand>
+                  <ProductPrice>${product.price}</ProductPrice>
+                </ProductInfo>
+              </ProductWrapper>
+            );
+          })}
         </ProductsList>
       </ProductsContent>
     </ProductsWrapper>

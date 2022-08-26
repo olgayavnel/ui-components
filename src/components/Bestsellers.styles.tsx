@@ -8,7 +8,6 @@ export const ProductsWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 export const ProductsContent = styled.div`
@@ -51,14 +50,20 @@ export const ProductsList = styled.ul`
 export const ProductWrapper = styled.li`
   display: flex;
   align-items: center;
-  background-color: rgb(254, 242, 238);
+  background-color: rgb(255, 255, 255);
   width: 13rem;
   border-radius: 1.5rem;
   gap: 2rem;
   justify-content: space-between;
   height: 7.5rem;
-  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
   padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgb(254, 242, 238);
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    transform: scale(1.1);
+  }
 
   @media ${device.tablet} {
     padding: 0;
@@ -84,11 +89,11 @@ export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
+  justify-content: space-evenly;
 
   p {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
+    margin: 0;
     letter-spacing: 0.016rem;
     word-wrap: break-word;
   }
@@ -99,14 +104,12 @@ export const ProductName = styled.p`
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.3rem;
-  margin-bottom: 0.6875rem;
 `;
 export const ProductBrand = styled.p`
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1rem;
   color: rgb(175, 175, 189);
-  margin-bottom: 0.5625em;
 `;
 export const ProductPrice = styled.p`
   color: rgb(18, 18, 31);

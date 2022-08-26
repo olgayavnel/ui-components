@@ -36,6 +36,7 @@ export const Basic = Template.bind({});
 Basic.args = {
   products: [
     {
+      id: "1",
       name: "Nike Air Max 270",
       brand: "Nike",
       image:
@@ -43,6 +44,7 @@ Basic.args = {
       price: "195.80",
     },
     {
+      id: "2",
       name: "Nike Air Max 90",
       brand: "Nike",
       image:
@@ -50,6 +52,7 @@ Basic.args = {
       price: "195.80",
     },
     {
+      id: "3",
       name: "Nike Air Max Plus",
       brand: "Nike",
       image:
