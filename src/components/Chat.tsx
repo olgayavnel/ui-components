@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import avatar from "../assets/avatar.jpg";
 import {
   Avatar,
-  Canvas,
+  ButtonTypography,
   ChatContent,
   ChatForm,
   ChatHeaderPrimaryText,
@@ -14,7 +14,6 @@ import {
   ChatHistory,
   ChatHistoryWrapper,
   ChatInput,
-  ChatLabel,
   ChatWrapper,
   InputWrapper,
   SubmitButton,
@@ -51,40 +50,46 @@ export const Chat: React.FC<ChatProps> = ({
     setChatText("");
   };
 
-  return (
-    <Canvas>
-      <ChatWrapper>
-        <ChatContent>
-          <ChatHeaderWrapper>
-            <Avatar src={avatar} alt="avatar" />
-            <ChatHeaderTypography>
-              <ChatHeaderPrimaryText>{headerPrimaryText}</ChatHeaderPrimaryText>
-              <ChatHeaderSecondaryText>
-                {headerSecondaryText}
-              </ChatHeaderSecondaryText>
-            </ChatHeaderTypography>
-            <IoMdClose color="#A2A1E9" />
-          </ChatHeaderWrapper>
-          <ChatHistoryWrapper>
-            <ChatHistory>{chatHistory}</ChatHistory>
-          </ChatHistoryWrapper>
-        </ChatContent>
+  const closeChat = () => {
+    alert("Chat closed");
+  };
 
-        <InputWrapper>
-          <ChatForm onSubmit={handleSubmit}>
-            <ChatLabel>
-              <ChatInput
-                about=""
-                type="string"
-                name="chatText"
-                value={chatText}
-                onChange={handleChatTextChange}
-              />
-            </ChatLabel>
-            <SubmitButton type="submit">{children}</SubmitButton>
-          </ChatForm>
-        </InputWrapper>
-      </ChatWrapper>
-    </Canvas>
+  return (
+    <ChatWrapper>
+      <ChatContent>
+        <ChatHeaderWrapper>
+          <Avatar src={avatar} alt="avatar" />
+          <ChatHeaderTypography>
+            <ChatHeaderPrimaryText>{headerPrimaryText}</ChatHeaderPrimaryText>
+            <ChatHeaderSecondaryText>
+              {headerSecondaryText}
+            </ChatHeaderSecondaryText>
+          </ChatHeaderTypography>
+          <IoMdClose
+            onClick={closeChat}
+            color="rgb(255, 255, 255)"
+            style={{ cursor: "pointer", height: "1rem", width: "1rem" }}
+          />
+        </ChatHeaderWrapper>
+        <ChatHistoryWrapper>
+          <ChatHistory>{chatHistory}</ChatHistory>
+        </ChatHistoryWrapper>
+      </ChatContent>
+
+      <InputWrapper>
+        <ChatForm onSubmit={handleSubmit}>
+          <ChatInput
+            about=""
+            type="string"
+            name="chatText"
+            value={chatText}
+            onChange={handleChatTextChange}
+          />
+          <SubmitButton type="submit">
+            <ButtonTypography>{children}</ButtonTypography>
+          </SubmitButton>
+        </ChatForm>
+      </InputWrapper>
+    </ChatWrapper>
   );
 };
