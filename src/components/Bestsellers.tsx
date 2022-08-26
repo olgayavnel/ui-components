@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Label,
   ProductBrand,
@@ -26,7 +26,6 @@ export interface BestsellersProps {
 export const Bestsellers: React.FC<BestsellersProps> = ({
   label,
   products,
-  ...props
 }: BestsellersProps) => {
   return (
     <ProductsWrapper>

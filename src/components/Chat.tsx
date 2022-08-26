@@ -35,7 +35,6 @@ export const Chat: React.FC<ChatProps> = ({
   chatHistory,
   chatAvatar,
   variant,
-  ...props
 }: ChatProps) => {
   const [chatText, setChatText] = useState("Type your message…");
 

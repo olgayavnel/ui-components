@@ -7,8 +7,6 @@ export default {
   title: "Component/Bestsellers",
   component: Bestsellers,
   decorators: [withDesign],
-  // Default args that will be applied
-  // in case no custom args are specified.
   args: {
     label: "Bestsellers",
     image: "",
@@ -27,7 +25,6 @@ export default {
   },
 };
 
-// story level
 const Template: Story<BestsellersProps> = (args: BestsellersProps) => {
   return <Bestsellers {...args} />;
 };

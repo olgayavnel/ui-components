@@ -46,6 +46,7 @@ export const ProductsList = styled.ul`
   margin: 0;
   gap: 1rem;
 `;
+
 // Content of each cart
 export const ProductWrapper = styled.li`
   display: flex;
